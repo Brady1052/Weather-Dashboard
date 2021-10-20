@@ -26,7 +26,7 @@ function getApi() {
             //Begins fetching API that contains the Uv Index
             var lat = data.coord.lat
             var lon = data.coord.lon
-            var uvLink = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=hourly,daily" + "&appid=" + APIKey;
+            var uvLink = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial" + "&appid=" + APIKey;
          
             fetch(uvLink)
             .then(function (response) {
@@ -37,19 +37,25 @@ function getApi() {
             console.log(lat)
             console.log(lon)
             console.log(data.current.uvi)
+            })
+            
+            
             var index = document.getElementById("uvIndex").innerHTML = "UV Index: " + data.current.uvi
-            
-            
             console.log(index)
             if (index == 0){
                 console.log("It's Working")
-                document.body.style.backgroundColor = "orange";
             } else if (index > 0){
                 console.log("Howdy")
             }
         })
-})}
+}
+
+
+
+
+           
 searchButton.addEventListener("click", getApi)
+   
 
 
 
