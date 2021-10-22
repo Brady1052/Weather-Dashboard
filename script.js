@@ -67,24 +67,30 @@ function getApi(city) {
 
                     //Day Three
                     var icon3 = data.daily[3].weather[0].icon
+                    var time3 = data.daily[3].dt
+                    var dateConverter3 = moment.unix(time3).format("MM/DD/YYYY")
                     var url3 = "http://openweathermap.org/img/w/" + icon3 + ".png";
-                    document.getElementById("date3").innerHTML = name + "<img src = " + url3 + ">";
+                    document.getElementById("date3").innerHTML = name + dateConverter3 + "<img src = " + url3 + ">";
                     document.getElementById("temperature3").innerHTML = "Temp: " + data.daily[3].feels_like.day + "°F"
                     document.getElementById("wind3").innerHTML = "Wind: " + data.daily[3].wind_speed + "MPH"
                     document.getElementById("humidity3").innerHTML = "Humidty: " + data.daily[3].humidity + "%"
 
                     //Day Four
                     var icon4 = data.daily[4].weather[0].icon
+                    var time4 = data.daily[4].dt
+                    var dateConverter4 = moment.unix(time4).format("MM/DD/YYYY")
                     var url4 = "http://openweathermap.org/img/w/" + icon4 + ".png";
-                    document.getElementById("date4").innerHTML = name + "<img src = " + url4 + ">";
+                    document.getElementById("date4").innerHTML = name + dateConverter4 + "<img src = " + url4 + ">";
                     document.getElementById("temperature4").innerHTML = "Temp: " + data.daily[4].feels_like.day + "°F"
                     document.getElementById("wind4").innerHTML = "Wind: " + data.daily[4].wind_speed + "MPH"
                     document.getElementById("humidity4").innerHTML = "Humidty: " + data.daily[4].humidity + "%"
 
                     //Day Five
                     var icon5 = data.daily[5].weather[0].icon
+                    var time5 = data.daily[5].dt
+                    var dateConverter5 = moment.unix(time5).format("MM/DD/YYYY")
                     var url5 = "http://openweathermap.org/img/w/" + icon5 + ".png";
-                    document.getElementById("date5").innerHTML = name + "<img src = " + url5 + ">";
+                    document.getElementById("date5").innerHTML = name + dateConverter5 + "<img src = " + url5 + ">";
                     document.getElementById("temperature5").innerHTML = "Temp: " + data.daily[5].feels_like.day + "°F"
                     document.getElementById("wind5").innerHTML = "Wind: " + data.daily[5].wind_speed + "MPH"
                     document.getElementById("humidity5").innerHTML = "Humidty: " + data.daily[5].humidity + "%"
