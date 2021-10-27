@@ -90,7 +90,7 @@ function getApi(city) {
                     var time5 = data.daily[5].dt
                     var dateConverter5 = moment.unix(time5).format("MM/DD/YYYY")
                     var url5 = "http://openweathermap.org/img/w/" + icon5 + ".png";
-                    document.getElementById("date5").innerHTML = name + " " + dateConverter5 + "<img src = " + url5 + ">";
+                    document.getElementById("date5").innerHTML = name + " " + dateConverter5 + "<img src = " + " " + url5 + ">";
                     document.getElementById("temperature5").innerHTML = "Temp: " + data.daily[5].feels_like.day + "°F"
                     document.getElementById("wind5").innerHTML = "Wind: " + data.daily[5].wind_speed + "MPH"
                     document.getElementById("humidity5").innerHTML = "Humidty: " + data.daily[5].humidity + "%"
