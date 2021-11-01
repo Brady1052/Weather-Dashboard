@@ -9,7 +9,7 @@ function getApi(city) {
     // var pElement = document.createElement("p")
     // pElement.innerHTML = city;
     // dropDown.appendChild(pElement)
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + "&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + "&appid=" + APIKey;
 
     fetch(queryURL)
         .then(function (response) {

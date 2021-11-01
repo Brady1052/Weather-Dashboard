@@ -30,8 +30,16 @@
     text-decoration: none;
     display: block; 
   }
+  
+  #fiveDayh1 {
+    text-align: center;
+  }
+  
+  .fiveDayContainer {
+ display: flex;
+  }
 
-  #card1 {
+  /* #card1 {
     position:relative;
     left: 288px;
     bottom:311px;
@@ -56,7 +64,7 @@
     position:relative;
     left:288px;
     bottom:1200px;
-  }
+  } */
   
   /* Change color of dropdown links on hover */
   .dropdown-content a:hover {background-color: #ddd;}
