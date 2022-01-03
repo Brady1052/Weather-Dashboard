@@ -118,17 +118,14 @@ function getApi(city) {
                 })
         })
 }
-
-// var userInput = document.querySelector("#citySearch")
-// userInput.textContent = saveCity;
-// var saveCity = document.
-
-searchButton.addEventListener("click", function () {
+//Calls functions when the search button is clicked
+searchButton.addEventListener("click", function () { 
+    document.getElementById("card0").style.visibility = 'visible';
+    document.getElementById("fiveDayContainer").style.visibility = 'visible';
     var city = document.getElementById("citySearch").value
-    var pElement = document.createElement("p")
+    var pElement = document.createElement("a")
     pElement.innerHTML = city;
     pElement.addEventListener ('click', function(){
-        console.log(this.innerHTML)
         getApi(this.innerHTML)
     })
     dropDown.appendChild(pElement)

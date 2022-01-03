@@ -1,4 +1,54 @@
 /* Dropdown Button */
+body {
+  background-image: url('https://images.pexels.com/photos/681391/pexels-photo-681391.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#citySearch{
+  margin-left: 2%;
+}
+
+.dropbtn {
+  max-height: 50%;
+}
+#searchButton {
+display:inline-block;
+padding:0.35em 1.2em;
+border:0.1em solid #FFFFFF;
+margin:0 0.3em 0.3em 0;
+border-radius:0.12em;
+box-sizing: border-box;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:300;
+color:#FFFFFF;
+text-align:center;
+transition: all 0.2s;
+background-color: black
+}
+
+#searchButton:hover{
+  color:#000000;
+  background-color:#FFFFFF;
+  }
+
+  @media all and (max-width:30em){
+    #button1{
+    display:block;
+    margin:0.4em auto;
+  }
+ }
+
+
+@media screen and (max-width: 620px) {
+.searchBox:hover > .searchInput {
+  width: 150px;
+  padding: 0 6px;
+}
+}
+  
 .dropbtn {
     background-color: #04AA6D;
     color: white;
@@ -30,12 +80,17 @@
     text-decoration: none;
     display: block; 
   }
+
+  #card0 {
+    visibility: hidden;
+  }
   
   #fiveDayh1 {
     text-align: center;
+    display: none;
   }
   
-  .fiveDayContainer {
+  #fiveDayContainer {
  display: flex;
   }
 

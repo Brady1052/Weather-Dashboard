@@ -13,20 +13,17 @@
 </head>
 
 <body class = "body">
-    <h1>Weather Dashboard</h1>
-    <input placeholder="Search City" id="citySearch" type="text">
+    <h1 style="text-align:center; color:white" >Weather Dashboard</h1> -->
+     <input placeholder="Search City" id="citySearch" type="text">
     <button id="searchButton">Search</button>
     
-    <div class="dropdown">
-      <button class="dropbtn">Dropdown</button>
+    <div class="dropdown" id='class'>
+      <button id="searchButton">History</button>
       <div class="dropdown-content">
-        <!-- <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a> -->
       </div>
     </div>
     <!-- Current Weather -->
-    <div class="card" style="width: 18rem;">  
+    <div class="card" id="card0" style="width: 18rem;">  
       <div class="card-body">
         <div id="currentWeather">
           <h1 id="nameDate"></h1>
@@ -39,7 +36,7 @@
     </div>    
    <!--Five Day Forecast-->
    <h1 id="fiveDayh1">Five Day Forecast</h1>
-   <div class = "fiveDayContainer">
+   <div id = "fiveDayContainer" style="visibility: hidden">
    <div class="card" id="card1" style="width: 18rem;">
       <div class="card-body">
         <div> 
