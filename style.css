@@ -15,7 +15,8 @@ a {
 
 #title {
   color: white;
-  margin-left: 7%
+  position: relative;
+  left: 6%
 }
 
 .dropbtn {
@@ -26,6 +27,7 @@ a {
   position: relative;
   right:1%;
   max-width: 5%;
+  max-height: fit-content;
 }
 
 #historyDropdown {
@@ -101,7 +103,7 @@ background-color: black;
     position: relative;
     display: inline-block;
     position:relative;
-    left: 73%;
+    left: 71%;
  
     /* bottom: 10% */
   }
