@@ -11,18 +11,39 @@
     <title>Weather</title>
 
 </head>
-
-<body class = "body">
-    <h1 style="text-align:center; color:white" >Weather Dashboard</h1> -->
-     <input placeholder="Search City" id="citySearch" type="text">
-    <button id="searchButton">Search</button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="#">Weather</a> -->
+    <img id='sunLogo'alt='sun cartoon'src='data:image/jpeg;base64,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'>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <!-- Dropdown -->
+      <div class="dropdown" id='class'>
+        <button id="historyDropdown">History</button>
+        <div class="dropdown-content">
+        </div>
+      </div>
+      <!-- Search Box -->
+      <h1  id=title style="text-align:center," >Weather Dashboard</h1>
+      <input placeholder="Search City" id="citySearch" type="text">
+     <button id="searchButton">Search</button>
+    </div>
+     
+    </div>
     
-    <div class="dropdown" id='class'>
-      <button id="searchButton">History</button>
+  </div>
+  
+</nav>
+  <!-- Dropdown -->
+      <!-- <div class="dropdown" id='class'>
+      <button id="historyDropdown">History</button>
       <div class="dropdown-content">
       </div>
-    </div>
+    </div>  -->
+   
     <!-- Current Weather -->
+    <h1 id=card0h1>Current Weather</h1>
     <div class="card" id="card0" style="width: 18rem;">  
       <div class="card-body">
         <div id="currentWeather">
@@ -35,6 +56,7 @@
       </div>
     </div>    
    <!--Five Day Forecast-->
+   <br>
    <h1 id="fiveDayh1">Five Day Forecast</h1>
    <div id = "fiveDayContainer" style="visibility: hidden">
    <div class="card" id="card1" style="width: 18rem;">
@@ -48,7 +70,7 @@
         </div>
       </div>
     </div>
-
+    <!-- Second Card -->
     <div class="card" id="card2" style="width: 18rem;">
       <div class="card-body">
         <div> 
@@ -60,7 +82,7 @@
         </div>
       </div>
     </div>
-   
+   <!-- Third Card -->
     <div class="card" id="card3" style="width: 18rem;">
       <div class="card-body">
         <div> 
@@ -72,7 +94,7 @@
         </div>
       </div>
     </div>
-
+    <!-- Fourth Card -->
     <div class="card" id="card4" style="width: 18rem;">
       <div class="card-body">
         <div> 
@@ -84,7 +106,7 @@
         </div>
       </div>
     </div>
-   
+   <!-- Fifth Card -->
     <div class="card" id="card5" style="width: 18rem;">
       <div class="card-body">
         <div> 
@@ -97,9 +119,9 @@
       </div>
     </div>
    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./script.js"></script>
 </body>
-
 </html>

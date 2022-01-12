@@ -5,19 +5,14 @@ var dropDown = document.querySelector(".dropdown-content")
 console.log(dropDown)
 
 function getApi(city) {
-    // var city = document.getElementById("citySearch").value
-    // var pElement = document.createElement("p")
-    // pElement.innerHTML = city;
-    // dropDown.appendChild(pElement)
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + "&appid=" + APIKey;
 
     fetch(queryURL)
         .then(function (response) {
             return response.json();
         })
+        // Current Weather
         .then(function (data) {
-            console.log(data.main.temp)
-            console.log(data)
             var time = data.dt
             var dateConverter = moment.unix(time).format("MM/DD/YYYY")
             var icon = data.weather[0].icon
@@ -38,10 +33,6 @@ function getApi(city) {
                     return response.json();
                 })
                 .then(function (data) {
-                    console.log(data)
-                    console.log(lat)
-                    console.log(lon)
-                    console.log(data.current.uvi)
                     document.getElementById("uvIndex").innerHTML = "UV Index: " + data.current.uvi
                     
                     // Five Day Forecast Starts Here
@@ -97,7 +88,6 @@ function getApi(city) {
 
                     //UV Index Color
                     var index = parseInt(data.current.uvi)
-                    console.log(index)
                     if (index < 3) {
                         console.log("It's Working")
                         document.getElementById('uvIndex').style.backgroundColor = 'green';
@@ -122,15 +112,19 @@ function getApi(city) {
 searchButton.addEventListener("click", function () { 
     document.getElementById("card0").style.visibility = 'visible';
     document.getElementById("fiveDayContainer").style.visibility = 'visible';
+    document.getElementById("card0h1").style.visibility = 'visible';
+    document.getElementById("fiveDayh1").style.visibility = "visible"
     var city = document.getElementById("citySearch").value
-    var pElement = document.createElement("a")
-    pElement.innerHTML = city;
-    pElement.addEventListener ('click', function(){
+    var aElement = document.createElement("a")
+    aElement.innerHTML = city;
+    aElement.addEventListener ('click', function(){
         getApi(this.innerHTML)
     })
-    dropDown.appendChild(pElement)
+    dropDown.appendChild(aElement)
     getApi(city);
 })
+
+
 
 
 

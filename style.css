@@ -6,13 +6,52 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+a {
+  cursor: default
+}
 #citySearch{
-  margin-left: 2%;
+  margin-left: 5%;
+}
+
+#title {
+  color: white;
+  margin-left: 7%
 }
 
 .dropbtn {
   max-height: 50%;
 }
+
+#sunLogo {
+  position: relative;
+  right:1%;
+  max-width: 5%;
+}
+
+#historyDropdown {
+  position: relative;
+  top: 0px;
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  margin-top: 15%;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#FFFFFF;
+  text-align:center;
+  transition: all 0.2s;
+  background-color: black; 
+}
+
+#historyDropdown:hover {
+  color:#000000;
+  background-color:#FFFFFF;
+}
+
 #searchButton {
 display:inline-block;
 padding:0.35em 1.2em;
@@ -26,7 +65,7 @@ font-weight:300;
 color:#FFFFFF;
 text-align:center;
 transition: all 0.2s;
-background-color: black
+background-color: black;
 }
 
 #searchButton:hover{
@@ -61,6 +100,10 @@ background-color: black
   .dropdown {
     position: relative;
     display: inline-block;
+    position:relative;
+    left: 73%;
+ 
+    /* bottom: 10% */
   }
   
    /* Dropdown Content (Hidden by Default) */
@@ -81,19 +124,49 @@ background-color: black
     display: block; 
   }
 
+  #historyDropdown {
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+    background-color: black;
+    position:relative;
+    bottom: 100px;
+  }
+
+  #historyDropdown:hover{
+    color: black;
+    background-color:#FFFFFF;
+    }
+
   #card0 {
     visibility: hidden;
   }
   
   #fiveDayh1 {
     text-align: center;
-    display: none;
+    visibility: hidden
   }
   
   #fiveDayContainer {
  display: flex;
   }
 
+  #card0 {
+    margin-left: 40%;
+  }
+  #card0h1 {
+    margin-left: 40%;
+    visibility: hidden;
+  }
   /* #card1 {
     position:relative;
     left: 288px;
