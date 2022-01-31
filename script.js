@@ -2,11 +2,12 @@ var APIKey = "2964b09add70d83c046524fefb1dc721"
 var searchButton = document.getElementById("searchButton")
 var displayDat = document.getElementById("displayData")
 var dropDown = document.querySelector(".dropdown-content")
-console.log(dropDown)
 
 function getApi(city) {
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + "&appid=" + APIKey;
-
+    localStorage.setItem('city', city)
+    const city1 = localStorage.getItem('city')
+    console.log(city1)
     fetch(queryURL)
         .then(function (response) {
             return response.json();
@@ -108,6 +109,12 @@ function getApi(city) {
                 })
         })
 }
+//  function localStorage(e){
+//  const savedCity = document.getElementById("citySearch").value
+//  localStorage.setItem('city', savedCity);
+//  alert('City Saved')
+//  e.preventDefault();
+//  };
 //Calls functions when the search button is clicked
 searchButton.addEventListener("click", function () { 
     document.getElementById("card0").style.visibility = 'visible';
@@ -116,9 +123,9 @@ searchButton.addEventListener("click", function () {
     document.getElementById("fiveDayh1").style.visibility = "visible"
     var city = document.getElementById("citySearch").value
     var aElement = document.createElement("a")
-    aElement.innerHTML = city;
+    aElement.textContent = city;
     aElement.addEventListener ('click', function(){
-        getApi(this.innerHTML)
+        getApi(this.textContent)
     })
     dropDown.appendChild(aElement)
     getApi(city);
