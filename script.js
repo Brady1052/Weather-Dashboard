@@ -1,13 +1,11 @@
-var APIKey = "2964b09add70d83c046524fefb1dc721"
-var searchButton = document.getElementById("searchButton")
-var displayDat = document.getElementById("displayData")
-var dropDown = document.querySelector(".dropdown-content")
+const APIKey = "2964b09add70d83c046524fefb1dc721"
+const searchButton = document.getElementById("searchButton");
+const displayDat = document.getElementById("displayData");
+const dropDown = document.querySelector(".dropdown-content");
+const city = document.getElementById("citySearch").value;
 
 function getApi(city) {
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + "&appid=" + APIKey;
-    localStorage.setItem('city', city)
-    const city1 = localStorage.getItem('city')
-    console.log(city1)
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + "&appid=" + APIKey; 
     fetch(queryURL)
         .then(function (response) {
             return response.json();
@@ -109,11 +107,9 @@ function getApi(city) {
                 })
         })
 }
-//  function localStorage(e){
-//  const savedCity = document.getElementById("citySearch").value
-//  localStorage.setItem('city', savedCity);
-//  alert('City Saved')
-//  e.preventDefault();
+//  function saveCity(e){
+//   console.log(123)   
+//   const savedCity = city
 //  };
 //Calls functions when the search button is clicked
 searchButton.addEventListener("click", function () { 
@@ -121,13 +117,22 @@ searchButton.addEventListener("click", function () {
     document.getElementById("fiveDayContainer").style.visibility = 'visible';
     document.getElementById("card0h1").style.visibility = 'visible';
     document.getElementById("fiveDayh1").style.visibility = "visible"
-    var city = document.getElementById("citySearch").value
+    const city = document.getElementById("citySearch").value
     var aElement = document.createElement("a")
     aElement.textContent = city;
     aElement.addEventListener ('click', function(){
         getApi(this.textContent)
     })
-    dropDown.appendChild(aElement)
+    dropDown.appendChild(aElement);
+    // let cities;
+    // if(localStorage.getItem('cities')=== null){
+    //     cities = [];
+    // } else {
+    //     cities = JSON.parse(localStorage.getItem('cities'))
+    // }
+    // cities.push(city)
+    // localStorage.setItem('cities', JSON.stringify(city));
+    
     getApi(city);
 })
 

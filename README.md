@@ -5,6 +5,9 @@ This application allows the user to search for their city and find the weather a
 To use this application simply type a city in the search box and click the search button. The current weather as well as the five day forecast will load. If the user wants to look at multiple cities their searches are saved under the dropdown icon.
 MIT License
 
+## Technlogies Used
+HTML5, CSS3, Javascript, DOM Manipulation, REST API
+
 ## Link to application
 https://brady1052.github.io/Weather-Dashboard/
 
