@@ -11,7 +11,7 @@ if (cities === null) {
     cities = [];
 } else {
     cities = JSON.parse(localStorage.getItem('cities'));
-}
+
 
 const history = JSON.parse(localStorage.getItem('cities'));
 history.forEach(function (city) {
@@ -28,6 +28,7 @@ history.forEach(function (city) {
     console.log(aTag.textContent)
     dropDown.appendChild(aTag)
 })
+}
 
 
 function getApi(city) {
@@ -135,19 +136,31 @@ function getApi(city) {
 //Calls functions when the search button is clicked
 
 searchButton.addEventListener("click", function (e) {
+    if (city === ''){
+        alert('Please search for a city')
+        return
+    }
     document.getElementById("card0").style.visibility = 'visible';
     document.getElementById("fiveDayContainer").style.visibility = 'visible';
     document.getElementById("card0h1").style.visibility = 'visible';
     document.getElementById("fiveDayh1").style.visibility = "visible"
-    const city = document.getElementById("citySearch").value
-
-    //Appends History Dropdown box with user's search
+    // const city = document.getElementById("citySearch").value
+    if (dropDown.childElementCount <= 3 ) {
     var aElement = document.createElement("a")
     aElement.textContent = city;
     aElement.addEventListener('click', function () {
         getApi(this.textContent)
     })
     dropDown.appendChild(aElement);
+} else if (dropDown.childElementCount > 3){
+    dropDown.removeChild(dropDown.lastChild)
+    var aElement = document.createElement("a")
+    aElement.textContent = city;
+    // aElement.addEventListener('click', function () {
+    //     getApi(this.textContent)
+    // })
+}
+
     getApi(city);
 
     cities.push(city)
@@ -156,8 +169,6 @@ searchButton.addEventListener("click", function (e) {
     localStorage.setItem('cities', JSON.stringify(cities))
 
 })
-
-
 
 
 
