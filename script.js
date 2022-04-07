@@ -104,6 +104,7 @@ function getApi(city) {
                     }
                 })
         })
+}
 
 //Calls functions when the search button is clicked
 searchButton.addEventListener("click", function () { 
@@ -118,7 +119,6 @@ searchButton.addEventListener("click", function () {
         getApi(this.textContent)
     })
     dropDown.appendChild(aElement);
- 
     
     getApi(city);
 })
