@@ -88,11 +88,9 @@ function getApi(city) {
                     //UV Index Color
                     var index = parseInt(data.current.uvi)
                     if (index < 3) {
-                        console.log("It's Working")
                         document.getElementById('uvIndex').style.backgroundColor = 'green';
                     } else if (index < 5) {
                         document.getElementById("uvIndex").style.backgroundColor = 'yellow';
-                        console.log("Howdy")
                     }
                     else if (index < 7) {
                         document.getElementById('uvIndex').style.backgroundColor = 'orange';
@@ -106,11 +104,7 @@ function getApi(city) {
                     }
                 })
         })
-}
-//  function saveCity(e){
-//   console.log(123)   
-//   const savedCity = city
-//  };
+
 //Calls functions when the search button is clicked
 searchButton.addEventListener("click", function () { 
     document.getElementById("card0").style.visibility = 'visible';
