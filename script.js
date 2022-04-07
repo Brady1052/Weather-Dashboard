@@ -4,14 +4,34 @@ const displayDat = document.getElementById("displayData");
 const dropDown = document.querySelector(".dropdown-content");
 const city = document.getElementById("citySearch").value;
 
-const history = localStorage.getItem('city')
-console.log(history)
-const storageElement = document.createElement("a")
-storageElement.textContent = history
-dropDown.appendChild(storageElement)
+// Gets local storage items
+let cities = localStorage.getItem('cities')
+
+if (cities === null) {
+    cities = [];
+} else {
+    cities = JSON.parse(localStorage.getItem('cities'));
+}
+
+const history = JSON.parse(localStorage.getItem('cities'));
+history.forEach(function (city) {
+
+    const aTag = document.createElement('a');
+    aTag.textContent = city;
+    aTag.addEventListener('click', function () {
+        document.getElementById("card0").style.visibility = 'visible';
+        document.getElementById("fiveDayContainer").style.visibility = 'visible';
+        document.getElementById("card0h1").style.visibility = 'visible';
+        document.getElementById("fiveDayh1").style.visibility = "visible"
+        getApi(city)
+    })
+    console.log(aTag.textContent)
+    dropDown.appendChild(aTag)
+})
+
 
 function getApi(city) {
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + "&appid=" + APIKey; 
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + "&appid=" + APIKey;
     fetch(queryURL)
         .then(function (response) {
             return response.json();
@@ -39,7 +59,7 @@ function getApi(city) {
                 })
                 .then(function (data) {
                     document.getElementById("uvIndex").innerHTML = "UV Index: " + data.current.uvi
-                    
+
                     // Five Day Forecast Starts Here
                     // Day One
                     var icon1 = data.daily[1].weather[0].icon
@@ -113,24 +133,28 @@ function getApi(city) {
 }
 
 //Calls functions when the search button is clicked
-searchButton.addEventListener("click", function () { 
+
+searchButton.addEventListener("click", function (e) {
     document.getElementById("card0").style.visibility = 'visible';
     document.getElementById("fiveDayContainer").style.visibility = 'visible';
     document.getElementById("card0h1").style.visibility = 'visible';
     document.getElementById("fiveDayh1").style.visibility = "visible"
     const city = document.getElementById("citySearch").value
-    //Saves users search to local storage
-    localStorage.setItem('city', city)
 
+    //Appends History Dropdown box with user's search
     var aElement = document.createElement("a")
     aElement.textContent = city;
-    aElement.addEventListener ('click', function(){
-        getApi(this.value)
+    aElement.addEventListener('click', function () {
+        getApi(this.textContent)
     })
     dropDown.appendChild(aElement);
-    // const history = localStorage.getItem(aElement)
-  
     getApi(city);
+
+    cities.push(city)
+
+    //Saves user search to local storage
+    localStorage.setItem('cities', JSON.stringify(cities))
+
 })
 
 
