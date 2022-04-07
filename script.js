@@ -118,14 +118,7 @@ searchButton.addEventListener("click", function () {
         getApi(this.textContent)
     })
     dropDown.appendChild(aElement);
-    // let cities;
-    // if(localStorage.getItem('cities')=== null){
-    //     cities = [];
-    // } else {
-    //     cities = JSON.parse(localStorage.getItem('cities'))
-    // }
-    // cities.push(city)
-    // localStorage.setItem('cities', JSON.stringify(city));
+ 
     
     getApi(city);
 })
