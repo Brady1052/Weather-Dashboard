@@ -136,6 +136,7 @@ function getApi(city) {
 //Calls functions when the search button is clicked
 
 searchButton.addEventListener("click", function (e) {
+    const city = document.getElementById("citySearch").value
     if (city === ''){
         alert('Please search for a city')
         return
@@ -144,7 +145,6 @@ searchButton.addEventListener("click", function (e) {
     document.getElementById("fiveDayContainer").style.visibility = 'visible';
     document.getElementById("card0h1").style.visibility = 'visible';
     document.getElementById("fiveDayh1").style.visibility = "visible"
-    // const city = document.getElementById("citySearch").value
     if (dropDown.childElementCount <= 3 ) {
     var aElement = document.createElement("a")
     aElement.textContent = city;
