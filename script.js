@@ -4,6 +4,12 @@ const displayDat = document.getElementById("displayData");
 const dropDown = document.querySelector(".dropdown-content");
 const city = document.getElementById("citySearch").value;
 
+const history = localStorage.getItem('city')
+console.log(history)
+const storageElement = document.createElement("a")
+storageElement.textContent = history
+dropDown.appendChild(storageElement)
+
 function getApi(city) {
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + "&appid=" + APIKey; 
     fetch(queryURL)
@@ -113,13 +119,17 @@ searchButton.addEventListener("click", function () {
     document.getElementById("card0h1").style.visibility = 'visible';
     document.getElementById("fiveDayh1").style.visibility = "visible"
     const city = document.getElementById("citySearch").value
+    //Saves users search to local storage
+    localStorage.setItem('city', city)
+
     var aElement = document.createElement("a")
     aElement.textContent = city;
     aElement.addEventListener ('click', function(){
-        getApi(this.textContent)
+        getApi(this.value)
     })
     dropDown.appendChild(aElement);
-    
+    // const history = localStorage.getItem(aElement)
+  
     getApi(city);
 })
 
