@@ -12,7 +12,6 @@ if (cities === null) {
 } else {
     cities = JSON.parse(localStorage.getItem('cities'));
 
-
 const history = JSON.parse(localStorage.getItem('cities'));
 history.forEach(function (city) {
 
@@ -25,7 +24,6 @@ history.forEach(function (city) {
         document.getElementById("fiveDayh1").style.visibility = "visible"
         getApi(city)
     })
-    console.log(aTag.textContent)
     dropDown.appendChild(aTag)
 })
 }
