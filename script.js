@@ -28,11 +28,11 @@ history.forEach(function (city) {
 })
 }
 
-
+//Fetches weather information based on city searched
 function getApi(city) {
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + "&appid=" + APIKey;
     fetch(queryURL)
-        .then(function (response) {
+        .then(response => {
             return response.json();
         })
         // Current Weather
@@ -53,7 +53,7 @@ function getApi(city) {
             var uvLink = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial" + "&appid=" + APIKey;
 
             fetch(uvLink)
-                .then(function (response) {
+                .then(response => {
                     return response.json();
                 })
                 .then(function (data) {
@@ -133,12 +133,14 @@ function getApi(city) {
 
 //Calls functions when the search button is clicked
 
-searchButton.addEventListener("click", function (e) {
+searchButton.addEventListener("click", function () {
     const city = document.getElementById("citySearch").value
     if (city === ''){
         alert('Please search for a city')
         return
     }
+
+    //Makes weather cards visible when search button is clicked
     document.getElementById("card0").style.visibility = 'visible';
     document.getElementById("fiveDayContainer").style.visibility = 'visible';
     document.getElementById("card0h1").style.visibility = 'visible';
@@ -154,9 +156,6 @@ searchButton.addEventListener("click", function (e) {
     dropDown.removeChild(dropDown.lastChild)
     var aElement = document.createElement("a")
     aElement.textContent = city;
-    // aElement.addEventListener('click', function () {
-    //     getApi(this.textContent)
-    // })
 }
 
     getApi(city);
