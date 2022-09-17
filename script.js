@@ -5,8 +5,7 @@ const dropDown = document.querySelector('.dropdown-content');
 const city = document.getElementById('citySearch').value;
 
 // Gets local storage items
-let cities = localStorage.getItem('cities');
-
+let cities;
 if (cities === null) {
   cities = [];
 } else {
