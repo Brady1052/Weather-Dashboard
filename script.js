@@ -5,7 +5,8 @@ const dropDown = document.querySelector('.dropdown-content');
 const city = document.getElementById('citySearch').value;
 
 // Gets local storage items
-let cities;
+let cities = localStorage.getItem('cities');
+
 if (cities === null) {
   cities = [];
 } else {
@@ -34,6 +35,7 @@ function getApi(city) {
     '&units=imperial' +
     '&appid=' +
     APIKey;
+
   fetch(queryURL)
     .then((response) => {
       return response.json();
